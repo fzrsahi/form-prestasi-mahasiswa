@@ -8,3 +8,8 @@ body *::after {
   margin: 0;
   padding: 0;
 }
+
+:where(input, select, textarea, button) {
+  font-size: inherit;
+  outline: none;
+}

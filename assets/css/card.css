@@ -1,0 +1,35 @@
+.card {
+  max-width: 100%;
+  width: 400px;
+  background-color: var(--card-color);
+  border-radius: 1em;
+  padding: 1.5em 1.2em 1.2em;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-color);
+}
+
+.card-header {
+  margin-bottom: 1em;
+}
+
+.card-body {
+  padding-top: 0;
+}
+
+.form-group:not(:last-child) {
+  margin-bottom: 1em;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+.form-group :where(input, select, textarea, button) {
+  display: block;
+  width: 100%;
+  padding: 0.8em 1em;
+  border: none;
+  border-radius: 0.5em;
+}
