@@ -11,27 +11,30 @@
     <link rel="stylesheet" href="assets/css/card.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
     <div id="particles-js" class="bg"></div>
     <main>
-        <form action="">
+        <form action="" style="display: flex; gap:2em;">
             <section class="card-prestasi">
                 <div class="card-header">
-                    <h1>Data Diri</h1>
+                    <h1>Prestasi Akamedik</h1>
                 </div>
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
-                        <p class="paragraph">Tuliskan Organisasi yang pernah/sedang diikuti, disertai jabatan, periode,
-                            serta lingkup kerja Organisasi(Lokal hingga internasional)</p>
-                        <textarea name="pengalamanOrganisasi" id="pengalamanOrganisasi" cols="30" rows="10"></textarea>
-                    </div>
                     <div class="form-group">
                         <label for="pengalamanOrganisasi">Prestasi Akademik</label>
                         <p class="paragraph" style="margin: 1   0px 0px">Isilah Dengan Prestasi akademik yang pernah
                             dicapai hingga saat ini</p>
-                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Olimpiade
-                            Sains</label>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="sains" value="Olimpiade Sains">
+                              <label for="juara-1">Olimpiade Sains</label>
+                              <input type="radio" id="juara-2" name="sains" value="Karya Tulis Ilmiah">
+                              <label for="juara-2">Karya Tulis Ilmiah</label>
+                              <input type="radio" id="juara-3" name="sains" value="Debat/Sejenis    ">
+                              <label for="juara-3">Debat/Sejenis </label>
+                        </div>
+                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Juara
+                        </label>
                         <div class="radio">
                             <input type="radio" id="juara-1" name="sains" value="Juara 1">
                               <label for="juara-1">Juara 1</label>
@@ -54,6 +57,78 @@
                         </div>
 
                     </div>
+                    <div class="form-group">
+                        <label for="prestasiLainnya">Lainnya</label>
+                        <p class="paragraph">Tuliskan Prestasi Lainnya selain yang tertulis di daftar</p>
+                        <textarea name="prestasiLainnya" id="prestasiLainnya" cols="15" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="PenjelasanPrestasi">Penjelasan Prestasi Akademik yang pernah dicapai</label>
+                        <p class="paragraph">Beri uraian mengengai prestasi akademik yang pernah dicapai(dapat diisi
+                            dengan format : nama kegiatan/penyelenggaraa/tahun/keterangan lainnya)</p>
+                        <textarea name="PenjelasanPrestasi" id="PenjelasanPrestasi" cols="15" rows="5"></textarea>
+                    </div>
+
+                </div>
+            </section>
+            <section class="card-prestasi">
+                <div class="card-header">
+                    <h1>Prestasi Non Akamedik</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <p class="paragraph" style="margin: 1   0px 0px">Isilah Dengan Prestasi Non akademik yang pernah
+                            dicapai hingga saat ini</p>
+                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Non
+                            Akamedik</label>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="nonakademik" value="Olahraga">
+                              <label for="juara-1">Olahraga</label>
+                              <input type="radio" id="juara-2" name="nonakademik" value="Kesenian">
+                              <label for="juara-2">Kesenian</label>
+                              <input type="radio" id="juara-3" name="nonakademik" value="Jurnalistik">
+                              <label for="juara-3">Jurnalistik</label>
+                            <input type="radio" id="juara-4" name="nonakademik" value="Keagamaan">
+                              <label for="juara-4">Keagamaan</label>
+                            <input type="radio" id="juara-4" name="nonakademik" value="Kewirausahaan">
+                              <label for="juara-4">Kewirausahaan</label>
+                            <input type="radio" id="juara-4" name="nonakademik" value="Keorganisasian">
+                              <label for="juara-4">Keorganisasian</label>
+                        </div>
+                        <p style="padding: 10px;">Juara</p>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="juara-yang-lain" value="Juara 1">
+                              <label for="juara-1">Juara 1</label>
+                              <input type="radio" id="juara-2" name="juara-yang-lain" value="Juara 2">
+                              <label for="juara-2">Juara 2</label>
+                              <input type="radio" id="juara-3" name="juara-yang-lain" value="Juara 3">
+                              <label for="juara-3">Juara 3</label>
+                            <input type="radio" id="juara-4" name="juara-yang-lain" value="Juara Harapan/Favorit">
+                              <label for="juara-4">Juara Harapan/Favorite</label>
+                        </div>
+                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Tingkat
+                            Lomba</label>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="tingkat-yang-lain" value="Tingkat Kota/Kab">
+                              <label for="juara-1">Tingkat Kota/Kab</label>
+                              <input type="radio" id="juara-2" name="tingkat-yang-lain" value="Tingkat Provinsi">
+                              <label for="juara-2">Tingkat Provinsi</label>
+                              <input type="radio" id="juara-3" name="tingkat-yang-lain" value="Tingkat Nasional">
+                              <label for="juara-3">Tingkat Nasional</label>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="prestasiLainnya">Lainnya</label>
+                        <p class="paragraph">Tuliskan Prestasi Lainnya selain yang tertulis di daftar</p>
+                        <textarea name="prestasiLainnya" id="prestasiLainnya" cols="15" rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="PenjelasanPrestasi">Penjelasan Prestasi Akademik yang pernah dicapai</label>
+                        <p class="paragraph">Beri uraian mengengai prestasi Non akademik yang pernah dicapai(dapat diisi
+                            dengan format : nama kegiatan/penyelenggaraa/tahun/keterangan lainnya)</p>
+                        <textarea name="PenjelasanPrestasi" id="PenjelasanPrestasi" cols="15" rows="5"></textarea>
+                    </div>
                 </div>
             </section>
         </form>
@@ -64,10 +139,3 @@
 </body>
 
 </html>
-
-<style>
-    .radio {
-        display: flex;
-        font-size: 10px;
-    }
-</style>

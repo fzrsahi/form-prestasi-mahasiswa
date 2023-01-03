@@ -30,3 +30,8 @@ body {
 .judul-lomba {
   margin-bottom: 20px;
 }
+
+.radio {
+  display: flex;
+  font-size: 10px;
+}
