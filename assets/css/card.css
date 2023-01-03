@@ -8,6 +8,16 @@
   border: 1px solid var(--card-color);
 }
 
+.card-prestasi {
+  max-width: 100%;
+  width: 700px;
+  background-color: var(--card-color);
+  border-radius: 1em;
+  padding: 1.5em 1.2em 1.2em;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--card-color);
+}
+
 .card-header {
   margin-bottom: 1em;
 }

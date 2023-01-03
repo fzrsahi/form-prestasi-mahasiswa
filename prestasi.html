@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prestasi</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/colors.css" />
+    <link rel="stylesheet" href="assets/css/card.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+    <div id="particles-js" class="bg"></div>
+    <main>
+        <form action="">
+            <section class="card-prestasi">
+                <div class="card-header">
+                    <h1>Data Diri</h1>
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
+                        <p class="paragraph">Tuliskan Organisasi yang pernah/sedang diikuti, disertai jabatan, periode,
+                            serta lingkup kerja Organisasi(Lokal hingga internasional)</p>
+                        <textarea name="pengalamanOrganisasi" id="pengalamanOrganisasi" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pengalamanOrganisasi">Prestasi Akademik</label>
+                        <p class="paragraph" style="margin: 1   0px 0px">Isilah Dengan Prestasi akademik yang pernah
+                            dicapai hingga saat ini</p>
+                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Olimpiade
+                            Sains</label>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="sains" value="Juara 1">
+                              <label for="juara-1">Juara 1</label>
+                              <input type="radio" id="juara-2" name="sains" value="Juara 2">
+                              <label for="juara-2">Juara 2</label>
+                              <input type="radio" id="juara-3" name="sains" value="Juara 3">
+                              <label for="juara-3">Juara 3</label>
+                            <input type="radio" id="juara-4" name="sains" value="Juara Harapan/Favorit">
+                              <label for="juara-4">Juara Harapan/Favorite</label>
+                        </div>
+                        <label for="pengalamanOrganisasi" class="judul-lomba" style="margin-bottom: 20px;">Tingkat
+                            Lomba</label>
+                        <div class="radio">
+                            <input type="radio" id="juara-1" name="tingkat" value="Tingkat Kota/Kab">
+                              <label for="juara-1">Tingkat Kota/Kab</label>
+                              <input type="radio" id="juara-2" name="tingkat" value="Tingkat Provinsi">
+                              <label for="juara-2">Tingkat Provinsi</label>
+                              <input type="radio" id="juara-3" name="tingkat" value="Tingkat Nasional">
+                              <label for="juara-3">Tingkat Nasional</label>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </form>
+    </main>
+
+    <script src="vendor/particle-js/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
+
+<style>
+    .radio {
+        display: flex;
+        font-size: 10px;
+    }
+</style>

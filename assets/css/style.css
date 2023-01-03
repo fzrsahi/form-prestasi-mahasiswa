@@ -20,3 +20,13 @@ body {
 .debug * {
   outline: 1px solid yellow;
 }
+
+.paragraph {
+  font-size: smaller;
+  padding-bottom: 10px; 
+  color: rgb(168, 168, 168);
+}
+
+.judul-lomba {
+  margin-bottom: 20px;
+}
