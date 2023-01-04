@@ -431,8 +431,8 @@
     <script src="assets/js/app.js"></script>
     <script src="vendor/storage.js"></script>
     <script>
-      const success = localStorage.getItem("success");
-      const error = localStorage.getItem("error");
+      const success = sessionStorage.getItem("success");
+      const error = sessionStorage.getItem("error");
       if (success) alert(success);
       if (error) alert(error);
     </script>

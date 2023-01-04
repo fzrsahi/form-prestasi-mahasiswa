@@ -40,47 +40,6 @@ entry.407005584=Kewirausahaan
 entry.407005584=Keorganisasian
 entry.407005584=Lainnya
 entry.1672378515=URAIANBAKATNONAKADEMIK
-
-entry.794704773=NAMA
-entry.1541333536=NIM
-entry.1077676743=PRODI
-entry.482518216=SEMESTER
-entry.1699025632=PENGALAMANORGANISASI
-entry.641476423=PRESTASIAKADEMIK
-entry.1224466415=URAIANPRESTASIAKADEMIK
-entry.1033499497=PRESTASINONAKADEMIK
-entry.1391655594=URAIANPRESTASINONAKADEMIK
-entry.1631384840=Karya+Tulis+Ilmiah
-entry.1631384840=Debat+Ilmiah
-entry.1631384840=Orasi+Bahasa+Asing
-entry.1631384840=Penelitian
-entry.1631384840=Pengabdian+Kepada+Masyarakat
-entry.1631384840=Lainnya
-entry.358306769=URAIANMINATAKADEMIK
-entry.513091603=Olahraga
-entry.513091603=Kesenian
-entry.513091603=Jurnalistik
-entry.513091603=Keagamaan
-entry.513091603=Kewirausahaan
-entry.513091603=Korganisasian
-entry.513091603=Lainnya
-entry.265211466=URAIANMINATNONAKADEMIK
-entry.1219538418=Karya+Tulis+Ilmiah
-entry.1219538418=Debat+Ilmiah
-entry.1219538418=Orasi+Bahasa+Asing
-entry.1219538418=Penelitian
-entry.1219538418=Pengabdian+Kepada+Masyarakat
-entry.1219538418=Lainnya
-entry.548246493=URAIANBAKATAKADEMIK
-entry.407005584=Olahraga
-entry.407005584=Kesenian
-entry.407005584=Jurnalistik
-entry.407005584=Keagamaan
-entry.407005584=Kewirausahaan
-entry.407005584=Keorganisasian
-entry.407005584=Lainnya
-entry.1672378515=URAIANBAKATNONAKADEMIK
-
 */
 
 const storageDataDiri = new Storage_("data-diri");
@@ -140,11 +99,13 @@ form.addEventListener("submit", (e) => {
     mode: "no-cors",
   })
     .then(() => {
-      localStorage.setItem("success", "Berhasil menyimpan data");
-      location.reload(true);
+      sessionStorage.setItem("success", "Berhasil menyimpan data");
+      storageDataDiri.empty();
+      storagePrestasi.empty();
+      location.href = "index.html";
     })
     .catch(() => {
-      localStorage.setItem("error", "Gagal menyimpan data");
+      sessionStorage.setItem("error", "Gagal menyimpan data");
       location.reload(true);
     });
 });
