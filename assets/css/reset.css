@@ -28,3 +28,7 @@ select :where(optgroup, option) {
 textarea {
   resize: none;
 }
+
+button {
+  cursor: pointer;
+}

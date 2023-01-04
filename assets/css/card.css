@@ -42,6 +42,22 @@
   padding: 0.8em 1em;
   border: none;
   border-radius: 0.5em;
+}
+
+.form-group :where(input, select, textarea) {
+  background-color: var(--card-color);
+}
+
+.form-group button {
+  background-color: var(--accent);
+}
+
+.form-group .bg-secondary {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+}
+
+.form-group button:hover {
   background-color: var(--card-color);
 }
 
