@@ -15,13 +15,17 @@
   <body>
     <div id="particles-js" class="bg"></div>
     <main>
-      <form action="minatbakat.html" id="form">
+      <form
+        action="minatbakat.html"
+        id="form"
+        class="d-flex gap-1 flex-wrap justify-content-center"
+      >
         <section class="card">
           <div class="card-header">
             <h1>Prestasi Akademik</h1>
             <p class="description p-0">
-              Isilah Dengan Prestasi akademik yang pernah dicapai hingga saat
-              ini
+              Isilah Dengan Prestasi Akademik yang pernah dicapai hingga saat
+              ini.
             </p>
           </div>
           <div class="card-body">
@@ -39,9 +43,11 @@
                 </select>
                 <select id="olimpiade_tingkat">
                   <option value="" hidden>Tingkat</option>
-                  <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
-                  <option value="Provinsi">Tingkat Provinsi</option>
-                  <option value="Nasional">Tingkat Nasional</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
                 </select>
               </div>
             </div>
@@ -61,9 +67,11 @@
 
                 <select id="kti_tingkat">
                   <option value="" hidden>Tingkat</option>
-                  <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
-                  <option value="Provinsi">Tingkat Provinsi</option>
-                  <option value="Nasional">Tingkat Nasional</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
                 </select>
               </div>
             </div>
@@ -83,9 +91,11 @@
 
                 <select id="debat_tingkat">
                   <option value="" hidden>Tingkat</option>
-                  <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
-                  <option value="Provinsi">Tingkat Provinsi</option>
-                  <option value="Nasional">Tingkat Nasional</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
                 </select>
               </div>
             </div>
@@ -93,7 +103,7 @@
             <div class="form-group">
               <label for="">Lainnya</label>
               <div class="d-flex gap-1">
-                <select id="lainnya_peringkat">
+                <select id="lainnya_akademik_peringkat">
                   <option value="" hidden>Peringkat</option>
                   <option value="Juara 1">Juara 1</option>
                   <option value="Juara 2">Juara 2</option>
@@ -103,23 +113,215 @@
                   </option>
                 </select>
 
-                <select id="lainnya_tingkat">
+                <select id="lainnya_akademik_tingkat">
                   <option value="" hidden>Tingkat</option>
-                  <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
-                  <option value="Provinsi">Tingkat Provinsi</option>
-                  <option value="Nasional">Tingkat Nasional</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="uraian">Uraian</label>
+              <label for="uraian_akademik">Uraian</label>
               <p class="description">
                 Beri penjelasan pada prestasi yang Anda raih.
               </p>
               <textarea
-                name=""
-                id="uraian"
+                id="uraian_akademik"
+                cols="30"
+                rows="5"
+                placeholder="Uraian ...."
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <h1>Prestasi Non Akademik</h1>
+            <p class="description p-0">
+              Isilah Dengan Prestasi Non Akademik yang pernah dicapai hingga
+              saat ini.
+            </p>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="">Olahraga</label>
+              <div class="d-flex gap-1">
+                <select id="olahraga_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+                <select id="olahraga_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Kesenian</label>
+              <div class="d-flex gap-1">
+                <select id="kesenian_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="kesenian_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Jurnalistik</label>
+              <div class="d-flex gap-1">
+                <select id="jurnalistik_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="jurnalistik_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Keagamaan</label>
+              <div class="d-flex gap-1">
+                <select id="keagamaan_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="keagamaan_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Kewirausahaan</label>
+              <div class="d-flex gap-1">
+                <select id="kewirausahaan_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="kewirausahaan_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Keorganisasian</label>
+              <div class="d-flex gap-1">
+                <select id="keorganisasian_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="keorganisasian_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="">Lainnya</label>
+              <div class="d-flex gap-1">
+                <select id="lainnya_nonakademik_peringkat">
+                  <option value="" hidden>Peringkat</option>
+                  <option value="Juara 1">Juara 1</option>
+                  <option value="Juara 2">Juara 2</option>
+                  <option value="Juara 3">Juara 3</option>
+                  <option value="Juara Harapan/Favorit">
+                    Juara Harapan/Favorit
+                  </option>
+                </select>
+
+                <select id="lainnya_nonakademik_tingkat">
+                  <option value="" hidden>Tingkat</option>
+                  <option value="Tingkat Kabupaten/Kota">
+                    Tingkat Kabupaten/Kota
+                  </option>
+                  <option value="Tingkat Provinsi">Tingkat Provinsi</option>
+                  <option value="Tingkat Nasional">Tingkat Nasional</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="uraian_nonakademik">Uraian</label>
+              <p class="description">
+                Beri penjelasan pada prestasi yang Anda raih.
+              </p>
+              <textarea
+                id="uraian_nonakademik"
                 cols="30"
                 rows="5"
                 placeholder="Uraian ...."
@@ -155,11 +357,41 @@
           peringkat: document.getElementById("debat_peringkat"),
           tingkat: document.getElementById("debat_tingkat"),
         },
-        lainnya: {
-          peringkat: document.getElementById("lainnya_peringkat"),
-          tingkat: document.getElementById("lainnya_tingkat"),
+        lainnya_akademik: {
+          peringkat: document.getElementById("lainnya_akademik_peringkat"),
+          tingkat: document.getElementById("lainnya_akademik_tingkat"),
         },
-        uraian: document.getElementById("uraian"),
+        uraian_akademik: document.getElementById("uraian_akademik"),
+
+        olahraga: {
+          peringkat: document.getElementById("olahraga_peringkat"),
+          tingkat: document.getElementById("olahraga_tingkat"),
+        },
+        kesenian: {
+          peringkat: document.getElementById("kesenian_peringkat"),
+          tingkat: document.getElementById("kesenian_tingkat"),
+        },
+        jurnalistik: {
+          peringkat: document.getElementById("jurnalistik_peringkat"),
+          tingkat: document.getElementById("jurnalistik_tingkat"),
+        },
+        keagamaan: {
+          peringkat: document.getElementById("keagamaan_peringkat"),
+          tingkat: document.getElementById("keagamaan_tingkat"),
+        },
+        kewirausahaan: {
+          peringkat: document.getElementById("kewirausahaan_peringkat"),
+          tingkat: document.getElementById("kewirausahaan_tingkat"),
+        },
+        keorganisasian: {
+          peringkat: document.getElementById("keorganisasian_peringkat"),
+          tingkat: document.getElementById("keorganisasian_tingkat"),
+        },
+        lainnya_nonakademik: {
+          peringkat: document.getElementById("lainnya_nonakademik_peringkat"),
+          tingkat: document.getElementById("lainnya_nonakademik_tingkat"),
+        },
+        uraian_nonakademik: document.getElementById("uraian_nonakademik"),
       };
 
       // object controller untuk menyimpan data form di session storage
@@ -169,15 +401,42 @@
 
       // jika sudah ada data dalam session storage, maka update isi dari input form
       if (prestasi) {
-        element.olimpiade.peringkat.value = prestasi.olimpiade.peringkat;
-        element.olimpiade.tingkat.value = prestasi.olimpiade.tingkat;
-        element.kti.peringkat.value = prestasi.kti.peringkat;
-        element.kti.tingkat.value = prestasi.kti.tingkat;
-        element.debat.peringkat.value = prestasi.debat.peringkat;
-        element.debat.tingkat.value = prestasi.debat.tingkat;
-        element.lainnya.peringkat.value = prestasi.lainnya.peringkat;
-        element.lainnya.tingkat.value = prestasi.lainnya.tingkat;
-        element.uraian.value = prestasi.uraian;
+        const { akademik, nonakademik } = prestasi;
+        const { olimpiade, kti, debat } = akademik;
+        element.olimpiade.peringkat.value = olimpiade.peringkat;
+        element.olimpiade.tingkat.value = olimpiade.tingkat;
+        element.kti.peringkat.value = kti.peringkat;
+        element.kti.tingkat.value = kti.tingkat;
+        element.debat.peringkat.value = debat.peringkat;
+        element.debat.tingkat.value = debat.tingkat;
+        element.lainnya_akademik.peringkat.value = akademik.lainnya.peringkat;
+        element.lainnya_akademik.tingkat.value = akademik.lainnya.tingkat;
+        element.uraian_akademik.value = akademik.uraian;
+
+        const {
+          olahraga,
+          kesenian,
+          jurnalistik,
+          keagamaan,
+          kewirausahaan,
+          keorganisasian,
+        } = nonakademik;
+        element.olahraga.peringkat.value = olahraga.peringkat;
+        element.olahraga.tingkat.value = olahraga.tingkat;
+        element.kesenian.peringkat.value = kesenian.peringkat;
+        element.kesenian.tingkat.value = kesenian.tingkat;
+        element.jurnalistik.peringkat.value = jurnalistik.peringkat;
+        element.jurnalistik.tingkat.value = jurnalistik.tingkat;
+        element.keagamaan.peringkat.value = keagamaan.peringkat;
+        element.keagamaan.tingkat.value = keagamaan.tingkat;
+        element.kewirausahaan.peringkat.value = kewirausahaan.peringkat;
+        element.kewirausahaan.tingkat.value = kewirausahaan.tingkat;
+        element.keorganisasian.peringkat.value = keorganisasian.peringkat;
+        element.keorganisasian.tingkat.value = keorganisasian.tingkat;
+        element.lainnya_nonakademik.peringkat.value =
+          nonakademik.lainnya.peringkat;
+        element.lainnya_nonakademik.tingkat.value = nonakademik.lainnya.tingkat;
+        element.uraian_nonakademik.value = nonakademik.uraian;
       }
 
       const backBtn = document.getElementById("back-btn");
@@ -200,39 +459,66 @@
 
         updateStorage();
 
-        // arahkan ke halaman selanjutnya
+        // arahkan ke halaman sebelumnya
         location.href = "index.html";
       });
 
       function updateStorage() {
         // isi nilai dari input ke dalam session storage untuk digunakan nanti
         storagePrestasi.updateFirst({
-          olimpiade: {
-            peringkat: element.olimpiade.peringkat.value,
-            tingkat: element.olimpiade.tingkat.value,
+          akademik: {
+            olimpiade: {
+              peringkat: element.olimpiade.peringkat.value,
+              tingkat: element.olimpiade.tingkat.value,
+            },
+            kti: {
+              peringkat: element.kti.peringkat.value,
+              tingkat: element.kti.tingkat.value,
+            },
+            debat: {
+              peringkat: element.debat.peringkat.value,
+              tingkat: element.debat.tingkat.value,
+            },
+            lainnya: {
+              peringkat: element.lainnya_akademik.peringkat.value,
+              tingkat: element.lainnya_akademik.tingkat.value,
+            },
+            uraian: element.uraian_akademik.value,
           },
-          kti: {
-            peringkat: element.kti.peringkat.value,
-            tingkat: element.kti.tingkat.value,
+
+          nonakademik: {
+            olahraga: {
+              peringkat: element.olahraga.peringkat.value,
+              tingkat: element.olahraga.tingkat.value,
+            },
+            kesenian: {
+              peringkat: element.kesenian.peringkat.value,
+              tingkat: element.kesenian.tingkat.value,
+            },
+            jurnalistik: {
+              peringkat: element.jurnalistik.peringkat.value,
+              tingkat: element.jurnalistik.tingkat.value,
+            },
+            keagamaan: {
+              peringkat: element.keagamaan.peringkat.value,
+              tingkat: element.keagamaan.tingkat.value,
+            },
+            kewirausahaan: {
+              peringkat: element.kewirausahaan.peringkat.value,
+              tingkat: element.kewirausahaan.tingkat.value,
+            },
+            keorganisasian: {
+              peringkat: element.keorganisasian.peringkat.value,
+              tingkat: element.keorganisasian.tingkat.value,
+            },
+            lainnya: {
+              peringkat: element.lainnya_nonakademik.peringkat.value,
+              tingkat: element.lainnya_nonakademik.tingkat.value,
+            },
+            uraian: element.uraian_nonakademik.value,
           },
-          debat: {
-            peringkat: element.debat.peringkat.value,
-            tingkat: element.debat.tingkat.value,
-          },
-          lainnya: {
-            peringkat: element.lainnya.peringkat.value,
-            tingkat: element.lainnya.tingkat.value,
-          },
-          uraian: element.uraian.value,
         });
       }
     </script>
   </body>
 </html>
-
-<style>
-  .radio {
-    display: flex;
-    font-size: 10px;
-  }
-</style>

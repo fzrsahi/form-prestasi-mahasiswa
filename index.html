@@ -101,16 +101,15 @@
               />
             </div>
 
-            <div class="form-group optional">
-              <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
+            <div class="form-group">
+              <label for="pengalaman_organisasi">Pengalaman Organisasi</label>
               <p class="description">
                 Tuliskan Organisasi yang pernah/sedang diikuti, disertai
                 jabatan, periode, serta lingkup kerja Organisasi (Lokal hingga
                 internasional)
               </p>
               <textarea
-                name="pengalamanOrganisasi"
-                id="pengalamanOrganisasi"
+                id="pengalaman_organisasi"
                 cols="30"
                 rows="5"
                 placeholder="Pengalaman Organisasi"
@@ -135,6 +134,7 @@
         nim: document.getElementById("nim"),
         prodi: document.getElementById("prodi"),
         semester: document.getElementById("semester"),
+        pengalaman_organisasi: document.getElementById("pengalaman_organisasi"),
       };
 
       // object controller untuk menyimpan data form di session storage
@@ -148,6 +148,7 @@
         element.nim.value = dataDiri.nim;
         element.prodi.value = dataDiri.prodi;
         element.semester.value = dataDiri.semester;
+        element.pengalaman_organisasi.value = dataDiri.pengalaman_organisasi;
       }
 
       const form = document.getElementById("form");
@@ -164,6 +165,7 @@
           nim: element.nim.value,
           prodi: element.prodi.value,
           semester: element.semester.value,
+          pengalaman_organisasi: element.pengalaman_organisasi.value,
         });
 
         // arahkan ke halaman selanjutnya

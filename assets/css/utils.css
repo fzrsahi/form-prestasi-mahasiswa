@@ -1,3 +1,7 @@
+.d-none {
+  display: none !important;
+}
+
 .d-flex {
   display: flex;
 }
@@ -28,4 +32,8 @@
 
 .p-0 {
   padding: 0 !important;
+}
+
+.pe-none {
+  pointer-events: none;
 }
