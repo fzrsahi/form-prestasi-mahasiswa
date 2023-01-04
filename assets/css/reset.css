@@ -11,7 +11,18 @@ body *::after {
 
 :where(input, select, textarea, button) {
   font-size: inherit;
+  font-family: inherit;
+  color: inherit;
   outline: none;
+}
+
+:where(input, textarea)::placeholder,
+select :where(optgroup, option) {
+  color: inherit;
+}
+
+select :where(optgroup, option) {
+  color: initial;
 }
 
 textarea {

@@ -1,6 +1,6 @@
 :root {
-  --background: #222;
+  --background: #8d4708;
   --font: #fff;
-  --font-muted: #aaa;
-  --card-color: #fff2;
+  --font-muted: #ccc;
+  --card-color: #fbebbb22;
 }
