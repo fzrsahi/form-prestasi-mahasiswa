@@ -50,7 +50,7 @@
               <select type="text" id="prodi" required>
                 <option value="" hidden>Pilih Program Studi</option>
 
-                <optgroup label="Informatika">
+                <optgroup label="Teknik Informatika">
                   <option value="Sistem Informasi">Sistem Informasi</option>
                   <option value="Pendidikan Teknologi Informasi">
                     Pendidikan Teknologi Informasi
@@ -60,15 +60,15 @@
                 <optgroup label="Teknik Sipil">
                   <option value="Teknik Sipil">Teknik Sipil</option>
                   <option value="Pendidikan Vokasional konsntruksi bangunan">
-                    Pendidikan Vokasional konsntruksi bangunan
+                    Pendidikan Vokasional Konstruksi Bangunan
                   </option>
                 </optgroup>
 
-                <optgroup label="Informatika">
-                  <option value="Sistem Informasi">Sistem Informasi</option>
-                  <option value="Pendidikan Teknologi Informasi">
-                    Pendidikan Teknologi Informasi
+                <optgroup label="Teknik Arsitektur">
+                  <option value="Perancangan Wilayah Kota">
+                    Perancangan Wilayah Kota
                   </option>
+                  <option value="Teknik Arsitektur">Teknik Arsitektur</option>
                 </optgroup>
 
                 <optgroup label="Teknik Elektro">
@@ -105,7 +105,7 @@
               <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
               <p class="description">
                 Tuliskan Organisasi yang pernah/sedang diikuti, disertai
-                jabatan, periode, serta lingkup kerja Organisasi(Lokal hingga
+                jabatan, periode, serta lingkup kerja Organisasi (Lokal hingga
                 internasional)
               </p>
               <textarea
@@ -118,7 +118,7 @@
             </div>
 
             <div class="form-group">
-              <button id="next-btn">Selanjutnya</button>
+              <button type="submit" id="next-btn">Selanjutnya</button>
             </div>
           </div>
         </section>
@@ -146,6 +146,7 @@
       if (dataDiri) {
         element.nama.value = dataDiri.nama;
         element.nim.value = dataDiri.nim;
+        element.prodi.value = dataDiri.prodi;
         element.semester.value = dataDiri.semester;
       }
 

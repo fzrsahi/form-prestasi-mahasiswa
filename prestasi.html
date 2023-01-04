@@ -15,7 +15,7 @@
   <body>
     <div id="particles-js" class="bg"></div>
     <main>
-      <form action="">
+      <form action="minatbakat.html" id="form">
         <section class="card">
           <div class="card-header">
             <h1>Prestasi Akademik</h1>
@@ -28,7 +28,7 @@
             <div class="form-group">
               <label for="">Olimpiade Sains</label>
               <div class="d-flex gap-1">
-                <select name="" id="">
+                <select id="olimpiade_peringkat">
                   <option value="" hidden>Peringkat</option>
                   <option value="Juara 1">Juara 1</option>
                   <option value="Juara 2">Juara 2</option>
@@ -37,7 +37,7 @@
                     Juara Harapan/Favorit
                   </option>
                 </select>
-                <select name="" id="">
+                <select id="olimpiade_tingkat">
                   <option value="" hidden>Tingkat</option>
                   <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
                   <option value="Provinsi">Tingkat Provinsi</option>
@@ -49,7 +49,7 @@
             <div class="form-group">
               <label for="">Karya Tulis Ilmiah</label>
               <div class="d-flex gap-1">
-                <select name="" id="">
+                <select id="kti_peringkat">
                   <option value="" hidden>Peringkat</option>
                   <option value="Juara 1">Juara 1</option>
                   <option value="Juara 2">Juara 2</option>
@@ -58,7 +58,8 @@
                     Juara Harapan/Favorit
                   </option>
                 </select>
-                <select name="" id="">
+
+                <select id="kti_tingkat">
                   <option value="" hidden>Tingkat</option>
                   <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
                   <option value="Provinsi">Tingkat Provinsi</option>
@@ -70,7 +71,7 @@
             <div class="form-group">
               <label for="">Debat/sejenis</label>
               <div class="d-flex gap-1">
-                <select name="" id="">
+                <select id="debat_peringkat">
                   <option value="" hidden>Peringkat</option>
                   <option value="Juara 1">Juara 1</option>
                   <option value="Juara 2">Juara 2</option>
@@ -79,7 +80,8 @@
                     Juara Harapan/Favorit
                   </option>
                 </select>
-                <select name="" id="">
+
+                <select id="debat_tingkat">
                   <option value="" hidden>Tingkat</option>
                   <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
                   <option value="Provinsi">Tingkat Provinsi</option>
@@ -91,7 +93,7 @@
             <div class="form-group">
               <label for="">Lainnya</label>
               <div class="d-flex gap-1">
-                <select name="" id="">
+                <select id="lainnya_peringkat">
                   <option value="" hidden>Peringkat</option>
                   <option value="Juara 1">Juara 1</option>
                   <option value="Juara 2">Juara 2</option>
@@ -100,7 +102,8 @@
                     Juara Harapan/Favorit
                   </option>
                 </select>
-                <select name="" id="">
+
+                <select id="lainnya_tingkat">
                   <option value="" hidden>Tingkat</option>
                   <option value="Kabupaten/Kota">Tingkat Kabupaten/Kota</option>
                   <option value="Provinsi">Tingkat Provinsi</option>
@@ -110,22 +113,24 @@
             </div>
 
             <div class="form-group">
-              <label for="uraian-prestasi">Uraian</label>
+              <label for="uraian">Uraian</label>
               <p class="description">
                 Beri penjelasan pada prestasi yang Anda raih.
               </p>
               <textarea
                 name=""
-                id="uraian-prestasi"
+                id="uraian"
                 cols="30"
-                rows="10"
+                rows="5"
                 placeholder="Uraian ...."
               ></textarea>
             </div>
 
             <div class="form-group d-flex gap-1">
-              <button class="bg-secondary">Sebelumnya</button>
-              <button>Selanjutnya</button>
+              <button class="bg-secondary" id="back-btn" type="button">
+                Sebelumnya
+              </button>
+              <button type="submit">Selanjutnya</button>
             </div>
           </div>
         </section>
@@ -134,6 +139,94 @@
 
     <script src="vendor/particle-js/particles.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="vendor/storage.js"></script>
+    <script>
+      // mengambil semua elemen di form
+      const element = {
+        olimpiade: {
+          peringkat: document.getElementById("olimpiade_peringkat"),
+          tingkat: document.getElementById("olimpiade_tingkat"),
+        },
+        kti: {
+          peringkat: document.getElementById("kti_peringkat"),
+          tingkat: document.getElementById("kti_tingkat"),
+        },
+        debat: {
+          peringkat: document.getElementById("debat_peringkat"),
+          tingkat: document.getElementById("debat_tingkat"),
+        },
+        lainnya: {
+          peringkat: document.getElementById("lainnya_peringkat"),
+          tingkat: document.getElementById("lainnya_tingkat"),
+        },
+        uraian: document.getElementById("uraian"),
+      };
+
+      // object controller untuk menyimpan data form di session storage
+      const storagePrestasi = new Storage_("prestasi");
+      // mengambil data di session storage
+      const prestasi = storagePrestasi.getFirst();
+
+      // jika sudah ada data dalam session storage, maka update isi dari input form
+      if (prestasi) {
+        element.olimpiade.peringkat.value = prestasi.olimpiade.peringkat;
+        element.olimpiade.tingkat.value = prestasi.olimpiade.tingkat;
+        element.kti.peringkat.value = prestasi.kti.peringkat;
+        element.kti.tingkat.value = prestasi.kti.tingkat;
+        element.debat.peringkat.value = prestasi.debat.peringkat;
+        element.debat.tingkat.value = prestasi.debat.tingkat;
+        element.lainnya.peringkat.value = prestasi.lainnya.peringkat;
+        element.lainnya.tingkat.value = prestasi.lainnya.tingkat;
+        element.uraian.value = prestasi.uraian;
+      }
+
+      const backBtn = document.getElementById("back-btn");
+      const form = document.getElementById("form");
+      const formAction = form.action;
+
+      // ketika form disubmit
+      form.addEventListener("submit", (e) => {
+        // cegah form untuk mensubmit data
+        e.preventDefault();
+
+        updateStorage();
+
+        // arahkan ke halaman selanjutnya
+        location.href = formAction;
+      });
+
+      backBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        updateStorage();
+
+        // arahkan ke halaman selanjutnya
+        location.href = "index.html";
+      });
+
+      function updateStorage() {
+        // isi nilai dari input ke dalam session storage untuk digunakan nanti
+        storagePrestasi.updateFirst({
+          olimpiade: {
+            peringkat: element.olimpiade.peringkat.value,
+            tingkat: element.olimpiade.tingkat.value,
+          },
+          kti: {
+            peringkat: element.kti.peringkat.value,
+            tingkat: element.kti.tingkat.value,
+          },
+          debat: {
+            peringkat: element.debat.peringkat.value,
+            tingkat: element.debat.tingkat.value,
+          },
+          lainnya: {
+            peringkat: element.lainnya.peringkat.value,
+            tingkat: element.lainnya.tingkat.value,
+          },
+          uraian: element.uraian.value,
+        });
+      }
+    </script>
   </body>
 </html>
 
