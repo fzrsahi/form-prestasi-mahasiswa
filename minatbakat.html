@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minat dan Bakat</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/colors.css" />
+    <link rel="stylesheet" href="assets/css/card.css" />
+    <link rel="stylesheet" href="assets/css/utils.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+    <div id="particles-js" class="bg"></div>
+
+    <main>
+      <form action="" class="d-flex gap-1 flex-wrap justify-content-center">
+        <section class="card">
+          <div class="card-header">
+            <h1>Minat</h1>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="">Bidang Akademik</label>
+              <div class="checkboxes">
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_kti" />
+                  <label for="minat_kti">Karya Tulis Ilmiah</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_debat" />
+                  <label for="minat_debat">Debat Ilmiah</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_orasi" />
+                  <label for="minat_orasi">Orasi Bahasa Asing</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_penelitian" />
+                  <label for="minat_penelitian">Penelitian</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_pengabdian" />
+                  <label for="minat_pengabdian"
+                    >Pengabdian Kepada Masyarakat</label
+                  >
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_lainnya" />
+                  <label for="minat_lainnya">Lainnya</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="uraian-akademik">Uraian</label>
+              <p class="description">
+                Beri uraian pada peminatan yang Anda pilih, misalnya "Orasi
+                Bahasa Inggris" atau "Penelitian Terapan"
+              </p>
+              <input
+                type="text"
+                id="uraian-akademik"
+                placeholder="Uraian minat"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="">Bidang Non Akademik</label>
+              <div class="checkboxes">
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_olahraga" />
+                  <label for="minat_olahraga">Olahraga</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="minat[]" id="minat_kesenian" />
+                  <label for="minat_kesenian">Kesenian</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="minat[]"
+                    id="minat_jurnalistik"
+                  />
+                  <label for="minat_jurnalistik">Keagamaan</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="minat[]"
+                    id="minat_kewirausahaan"
+                  />
+                  <label for="minat_kewirausahaan">Kewirausahaan</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="minat[]"
+                    id="minat_keorganisasian"
+                  />
+                  <label for="minat_keorganisasian">Keorganisasian</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="uraian-nonAkademik">Uraian</label>
+              <p class="description">
+                Beri uraian pada peminatan yang Anda pilih, misalnya "Orasi
+                Bahasa Inggris" atau "Penelitian Terapan"
+              </p>
+              <input
+                type="text"
+                id="uraian-nonAkademik"
+                placeholder="Uraian minat"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="card">
+          <div class="card-header">
+            <h1>Bakat</h1>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="">Bidang Akademik</label>
+              <div class="checkboxes">
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_kti" />
+                  <label for="bakat_kti">Karya Tulis Ilmiah</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_debat" />
+                  <label for="bakat_debat">Debat Ilmiah</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_orasi" />
+                  <label for="bakat_orasi">Orasi Bahasa Asing</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_penelitian" />
+                  <label for="bakat_penelitian">Penelitian</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_pengabdian" />
+                  <label for="bakat_pengabdian">
+                    Pengabdian Kepada Masyarakat
+                  </label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_lainnya" />
+                  <label for="bakat_lainnya">Lainnya</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="uraian-akademik">Uraian</label>
+              <p class="description">
+                Beri uraian pada bakat yang Anda pilih, misalnya "Orasi Bahasa
+                Inggris" atau "Penelitian Terapan"
+              </p>
+              <input
+                type="text"
+                id="uraian-akademik"
+                placeholder="Uraian bakat"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="">Bidang Non Akademik</label>
+              <div class="checkboxes">
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_olahraga" />
+                  <label for="bakat_olahraga">Olahraga</label>
+                </div>
+
+                <div class="form-check">
+                  <input type="checkbox" name="bakat[]" id="bakat_kesenian" />
+                  <label for="bakat_kesenian">Kesenian</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="bakat[]"
+                    id="bakat_jurnalistik"
+                  />
+                  <label for="bakat_jurnalistik">Keagamaan</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="bakat[]"
+                    id="bakat_kewirausahaan"
+                  />
+                  <label for="bakat_kewirausahaan">Kewirausahaan</label>
+                </div>
+
+                <div class="form-check">
+                  <input
+                    type="checkbox"
+                    name="bakat[]"
+                    id="bakat_keorganisasian"
+                  />
+                  <label for="bakat_keorganisasian">Keorganisasian</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="uraian-nonAkademik">Uraian</label>
+              <p class="description">
+                Beri uraian pada bakat yang Anda pilih, misalnya "Orasi Bahasa
+                Inggris" atau "Penelitian Terapan"
+              </p>
+              <input
+                type="text"
+                id="uraian-nonAkademik"
+                placeholder="Uraian bakat"
+              />
+            </div>
+          </div>
+        </section>
+      </form>
+    </main>
+
+    <script src="vendor/particle-js/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

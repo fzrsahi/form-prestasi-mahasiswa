@@ -1,76 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Diri</title>
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/colors.css" />
+    <link rel="stylesheet" href="assets/css/card.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data Diri</title>
-  <link rel="stylesheet" href="assets/css/reset.css" />
-  <link rel="stylesheet" href="assets/css/colors.css" />
-  <link rel="stylesheet" href="assets/css/card.css" />
-  <link rel="stylesheet" href="assets/css/style.css" />
-</head>
+  <body>
+    <div id="particles-js" class="bg"></div>
 
-<body>
-  <div id="particles-js" class="bg"></div>
+    <main>
+      <form action="">
+        <section class="card">
+          <div class="card-header">
+            <h1>Data Diri</h1>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="nama">Nama Lengkap</label>
+              <input
+                type="text"
+                name="nama"
+                id="nama"
+                placeholder="Nama Lengkap"
+                autofocus
+              />
+            </div>
 
-  <main>
-    <form action="">
-      <section class="card">
-        <div class="card-header">
-          <h1>Data Diri</h1>
-        </div>
-        <div class="card-body">
-          <div class="form-group">
-            <label for="nama">Nama Lengkap</label>
-            <input type="text" name="nama" id="nama" placeholder="Nama Lengkap" autofocus />
-          </div>
-          <div class="form-group">
-            <label for="nim">NIM</label>
-            <input type="text" name="nim" id="nim" placeholder="Nim" autofocus />
-          </div>
-          <div class="form-group">
-            <label for="prodi">Program Studi</label>
-            <select type="text" name="jurusan" id="prodi">
-              <option value="" hidden>Pilih Program Studi</option>
-              <optgroup label="Informatika">
-                <option value="Sistem Informasi">Sistem Informasi</option>
-                <option value="Pendidikan Teknologi Informasi">
-                  Pendidikan Teknologi Informasi
-                </option>
-              </optgroup>
-              <optgroup label="Teknik Sipil">
-                <option value="Teknik Sipil">Teknik Sipil</option>
-                <option value="Pendidikan Vokasional konsntruksi bangunan">
-                  Pendidikan Vokasional konsntruksi bangunan
-                </option>
-              </optgroup>
-              <optgroup label="Informatika">
-                <option value="Sistem Informasi">Sistem Informasi</option>
-                <option value="Pendidikan Teknologi Informasi">
-                  Pendidikan Teknologi Informasi
-                </option>
-              </optgroup>
-              <optgroup label="Teknik Elektro">
-                <option value="Teknik Elektro">Teknik Elektro</option>
-              </optgroup>
-              <optgroup label="Teknik Industri">
-                <option value="Teknik Industro">Teknik Industro</option>
-                <option value="Pendidikan Teknik Mesin">
-                  Pendidikan Teknik Mesin
-                </option>
-              </optgroup>
-              <optgroup label="Seni Rupa Dan Desain">
-                <option value="Pendidikan Seni Rupa">Pendidikan Seni Rupa</option>
-              </optgroup>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="semester">Semester</label>
-            <select type="text" name="semester" id="semester">
-              <option value="" hidden>Pilih Semester</option>
-              <optgroup label="Semester">
+            <div class="form-group">
+              <label for="nim">NIM</label>
+              <input
+                type="text"
+                name="nim"
+                id="nim"
+                placeholder="Nim"
+                autofocus
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="prodi">Program Studi</label>
+              <select type="text" name="jurusan" id="prodi">
+                <option value="" hidden>Pilih Program Studi</option>
+
+                <optgroup label="Informatika">
+                  <option value="Sistem Informasi">Sistem Informasi</option>
+                  <option value="Pendidikan Teknologi Informasi">
+                    Pendidikan Teknologi Informasi
+                  </option>
+                </optgroup>
+
+                <optgroup label="Teknik Sipil">
+                  <option value="Teknik Sipil">Teknik Sipil</option>
+                  <option value="Pendidikan Vokasional konsntruksi bangunan">
+                    Pendidikan Vokasional konsntruksi bangunan
+                  </option>
+                </optgroup>
+
+                <optgroup label="Informatika">
+                  <option value="Sistem Informasi">Sistem Informasi</option>
+                  <option value="Pendidikan Teknologi Informasi">
+                    Pendidikan Teknologi Informasi
+                  </option>
+                </optgroup>
+
+                <optgroup label="Teknik Elektro">
+                  <option value="Teknik Elektro">Teknik Elektro</option>
+                </optgroup>
+
+                <optgroup label="Teknik Industri">
+                  <option value="Teknik Industro">Teknik Industro</option>
+                  <option value="Pendidikan Teknik Mesin">
+                    Pendidikan Teknik Mesin
+                  </option>
+                </optgroup>
+
+                <optgroup label="Seni Rupa Dan Desain">
+                  <option value="Pendidikan Seni Rupa">
+                    Pendidikan Seni Rupa
+                  </option>
+                </optgroup>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="semester">Semester</label>
+              <select type="text" name="semester" id="semester">
+                <option value="" hidden>Pilih Semester</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -79,22 +99,28 @@
                 <option value="6">6</option>
                 <option value="7">7</option>
                 <option value="8">8</option>
-
-              </optgroup>
-            </select>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
+              <p class="description">
+                Tuliskan Organisasi yang pernah/sedang diikuti, disertai
+                jabatan, periode, serta lingkup kerja Organisasi(Lokal hingga
+                internasional)
+              </p>
+              <textarea
+                name="pengalamanOrganisasi"
+                id="pengalamanOrganisasi"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </div>
           </div>
-          <!-- <div class="form-group">
-            <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
-            <p class="paragraph">Tuliskan Organisasi yang pernah/sedang diikuti, disertai jabatan, periode, serta lingkup kerja Organisasi(Lokal hingga internasional)</p>
-            <textarea name="pengalamanOrganisasi" id="pengalamanOrganisasi" cols="30" rows="10"></textarea>
-          </div> -->
-        </div>
-      </section>
-    </form>
-  </main>
+        </section>
+      </form>
+    </main>
 
-  <script src="vendor/particle-js/particles.min.js"></script>
-  <script src="assets/js/app.js"></script>
-</body>
-
+    <script src="vendor/particle-js/particles.min.js"></script>
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>

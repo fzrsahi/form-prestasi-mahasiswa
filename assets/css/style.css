@@ -2,7 +2,7 @@ body {
   background-color: var(--background);
   color: var(--font);
   padding: 1em;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,10 +21,10 @@ body {
   outline: 1px solid yellow;
 }
 
-.paragraph {
+.description {
   font-size: smaller;
-  padding-bottom: 10px; 
-  color: rgb(168, 168, 168);
+  padding-bottom: 10px;
+  color: var(--font-muted);
 }
 
 .judul-lomba {
