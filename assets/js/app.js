@@ -9,5 +9,11 @@ particlesJS.load("particles-js", "config/particles.json", () =>
 
 const success = sessionStorage.getItem("success");
 const error = sessionStorage.getItem("error");
-if (success) alert(success);
-if (error) alert(error);
+if (success) {
+  alert(success);
+  sessionStorage.setItem("success", "");
+}
+if (error) {
+  alert(error);
+  sessionStorage.setItem("error", "");
+}
