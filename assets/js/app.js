@@ -6,3 +6,8 @@
 particlesJS.load("particles-js", "config/particles.json", () =>
   console.log("particles.json loaded")
 );
+
+const success = sessionStorage.getItem("success");
+const error = sessionStorage.getItem("error");
+if (success) alert(success);
+if (error) alert(error);
