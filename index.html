@@ -17,7 +17,7 @@
     <div id="particles-js" class="bg"></div>
 
     <main>
-      <form action="">
+      <form action="prestasi.html" id="form">
         <section class="card">
           <div class="card-header">
             <h1>Data Diri</h1>
@@ -27,10 +27,10 @@
               <label for="nama">Nama Lengkap</label>
               <input
                 type="text"
-                name="nama"
                 id="nama"
                 placeholder="Nama Lengkap"
                 autofocus
+                required
               />
             </div>
 
@@ -39,16 +39,15 @@
               <input
                 type="text"
                 pattern="\d{9}"
-                name="nim"
                 id="nim"
                 placeholder="Nim"
-                autofocus
+                required
               />
             </div>
 
             <div class="form-group">
               <label for="prodi">Program Studi</label>
-              <select type="text" name="jurusan" id="prodi">
+              <select type="text" id="prodi" required>
                 <option value="" hidden>Pilih Program Studi</option>
 
                 <optgroup label="Informatika">
@@ -92,20 +91,17 @@
             </div>
             <div class="form-group">
               <label for="semester">Semester</label>
-              <select type="text" name="semester" id="semester">
-                <option value="" hidden>Pilih Semester</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-              </select>
+              <input
+                type="number"
+                min="1"
+                max="14"
+                id="semester"
+                required
+                placeholder="Semester"
+              />
             </div>
 
-            <div class="form-group">
+            <div class="form-group optional">
               <label for="pengalamanOrganisasi">Pengalaman Organisasi</label>
               <p class="description">
                 Tuliskan Organisasi yang pernah/sedang diikuti, disertai
@@ -116,12 +112,13 @@
                 name="pengalamanOrganisasi"
                 id="pengalamanOrganisasi"
                 cols="30"
-                rows="10"
+                rows="5"
+                placeholder="Pengalaman Organisasi"
               ></textarea>
             </div>
 
             <div class="form-group">
-              <button>Selanjutnya</button>
+              <button id="next-btn">Selanjutnya</button>
             </div>
           </div>
         </section>
@@ -130,5 +127,47 @@
 
     <script src="vendor/particle-js/particles.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="vendor/storage.js"></script>
+    <script>
+      // mengambil semua elemen di form
+      const element = {
+        nama: document.getElementById("nama"),
+        nim: document.getElementById("nim"),
+        prodi: document.getElementById("prodi"),
+        semester: document.getElementById("semester"),
+      };
+
+      // object controller untuk menyimpan data form di session storage
+      const storageDataDiri = new Storage_("data-diri");
+      // mengambil data di session storage
+      const dataDiri = storageDataDiri.getFirst();
+
+      // jika sudah ada data dalam session storage, maka update isi dari input form
+      if (dataDiri) {
+        element.nama.value = dataDiri.nama;
+        element.nim.value = dataDiri.nim;
+        element.semester.value = dataDiri.semester;
+      }
+
+      const form = document.getElementById("form");
+      const formAction = form.action;
+
+      // ketika form disubmit
+      form.addEventListener("submit", (e) => {
+        // cegah form untuk mensubmit data
+        e.preventDefault();
+
+        // isi nilai dari input ke dalam session storage untuk digunakan nanti
+        storageDataDiri.updateFirst({
+          nama: element.nama.value,
+          nim: element.nim.value,
+          prodi: element.prodi.value,
+          semester: element.semester.value,
+        });
+
+        // arahkan ke halaman selanjutnya
+        location.href = formAction;
+      });
+    </script>
   </body>
 </html>

@@ -36,6 +36,13 @@
   margin-bottom: 0.3em;
 }
 
+.form-group.optional label::after {
+  content: " (Opsional)";
+  color: var(--font-muted);
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
 .form-group :where(input, select, textarea, button) {
   display: block;
   width: 100%;
