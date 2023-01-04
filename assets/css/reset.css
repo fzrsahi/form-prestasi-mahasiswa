@@ -13,3 +13,7 @@ body *::after {
   font-size: inherit;
   outline: none;
 }
+
+textarea {
+  resize: none;
+}

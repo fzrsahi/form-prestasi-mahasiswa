@@ -43,3 +43,20 @@
   border: none;
   border-radius: 0.5em;
 }
+
+.form-check {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.form-check input[type="checkbox"] {
+  width: auto;
+}
+
+.form-check label {
+  margin: 0;
+  flex: 1;
+  cursor: pointer;
+}
