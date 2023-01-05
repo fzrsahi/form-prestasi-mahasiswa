@@ -65,8 +65,12 @@
   border: 1px solid var(--accent);
 }
 
-.form-group button:hover {
+.form-group button:where(:hover, :disabled) {
   background-color: var(--card-color);
+}
+
+.form-group button:disabled {
+  cursor: not-allowed;
 }
 
 .form-check {
@@ -85,7 +89,6 @@
   flex: 1;
   cursor: pointer;
 }
-
 
 @media only screen and (max-width: 800px) {
   .card {
