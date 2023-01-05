@@ -62,6 +62,25 @@ const element = {
   ),
 };
 
+const checks = [
+  {
+    boxes: document.querySelectorAll("#checkSatu input[type=checkbox]"),
+    message: document.getElementById("message"),
+  },
+  {
+    boxes: document.querySelectorAll("#checkDua input[type=checkbox]"),
+    message: document.getElementById("messageDua"),
+  },
+  {
+    boxes: document.querySelectorAll("#checkTiga input[type=checkbox]"),
+    message: document.getElementById("messageTiga"),
+  },
+  {
+    boxes: document.querySelectorAll("#checkEmpat input[type=checkbox]"),
+    message: document.getElementById("messageEmpat"),
+  },
+];
+
 const dataDiri = storageDataDiri.getFirst();
 const prestasi = storagePrestasi.getFirst();
 fillForm();
@@ -79,22 +98,36 @@ backBtn.addEventListener("click", (e) => {
   location.href = "prestasi.html";
 });
 
+// untuk setiap checkbox group
+for (const check of checks) {
+  // untuk setiap checkbox
+  for (const checkbox of check.boxes) {
+    // lakukan validasi ketika ada event on change
+    checkbox.addEventListener("change", function () {
+      validateCheckboxes(check.boxes, check.message);
+    });
+  }
+}
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
+  // batalkan submit jika ada checkbox yang tidak valid
+  if (checks.some(({ boxes }) => !isValid(boxes))) return;
+
   const urlParams = new URLSearchParams();
-  for (const input of form.elements) {
-    if (input.name && input.value) {
+  for (const input of form.elements)
+    if (input.name && input.value)
       if (input.checked || input.type !== "checkbox")
         urlParams.append(input.name, input.value);
-    }
-  }
 
   let url = formAction + "?" + urlParams.toString();
 
   form.classList.add("pe-none");
   submitBtn.classList.add("d-none");
   loaderBtn.classList.remove("d-none");
+
+  console.log("fetching data to: " + url);
   fetch(url, {
     mode: "no-cors",
   })
@@ -109,6 +142,23 @@ form.addEventListener("submit", (e) => {
       location.reload(true);
     });
 });
+
+function validateCheckboxes(checkboxes, messageElement) {
+  if (isValid(checkboxes)) {
+    // Menghapus atribut disabled pada tombol submit jika ada setidaknya satu checkbox yang terpilih
+    submitBtn.removeAttribute("disabled");
+    messageElement.innerHTML = "";
+  } else {
+    // Menambahkan atribut disabled pada tombol submit-btn jika tidak ada checkbox yang terpilih
+    submitBtn.setAttribute("disabled", true);
+    messageElement.innerHTML =
+      "Silakan pilih setidaknya satu checkbox Pada Minat Bidang Akademik";
+  }
+}
+
+function isValid(checkboxes) {
+  return [...checkboxes].some((checkbox) => checkbox.checked);
+}
 
 function fillForm() {
   if (dataDiri) {
