@@ -85,3 +85,16 @@
   flex: 1;
   cursor: pointer;
 }
+
+
+@media only screen and (max-width: 800px) {
+  .card {
+    width: 390px;
+  }
+}
+
+@media only screen and (max-width: 669px) {
+  .card {
+    width: 350px;
+  }
+}
