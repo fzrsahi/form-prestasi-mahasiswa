@@ -1,6 +1,6 @@
 <?php
 
-function uploadFile($file, $target_dir = 'uploads/')
+function uploadFile($file_name, $file_tmp_name, $target_dir = 'uploads/')
 {
   $response = [
     "status" => "success",
@@ -10,12 +10,12 @@ function uploadFile($file, $target_dir = 'uploads/')
   ];
 
   // upload file
-  $target_file = $target_dir . basename($file["name"]);
+  $target_file = $target_dir . basename($file_name);
   $fileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
   $target_file = $target_dir . uniqid(rand()) . '.' . $fileType;
 
   // Check if file is an actual image or fake image
-  if (!filesize($file["tmp_name"])) {
+  if (!filesize($file_tmp_name)) {
     $response['status'] = 'error';
     $response['message'] = 'File yang diupload bukan gambar.';
     return json_encode($response);
@@ -33,7 +33,7 @@ function uploadFile($file, $target_dir = 'uploads/')
     return json_encode($response);
   }
 
-  if (!move_uploaded_file($file["tmp_name"], $target_file)) {
+  if (!move_uploaded_file($file_tmp_name, $target_file)) {
     $response['status'] = 'error';
     $response['message'] = 'Maaf, terdapat error saat mengupload file.';
     return json_encode($response);
@@ -46,28 +46,35 @@ function uploadFile($file, $target_dir = 'uploads/')
   return json_encode($response);
 }
 
-// menggunakan fungsi uploadFile untuk upload sertifikat ke $targetDir
-$file = $_FILES['sertifikat'];
+// upload sertifikat ke $targetDir
 $targetDir = 'uploads/';
-// fungsi ini mengembalikan json
-$response = uploadFile($file, $targetDir);
+for ($i = 0; $i < count($_FILES['sertifikat']['name']); $i++) {
+  $file_name = $_FILES['sertifikat']['name'][$i];
+  $file_tmp_name = $_FILES['sertifikat']['tmp_name'][$i];
+  // fungsi ini mengembalikan json
+  $response = uploadFile($file_name, $file_tmp_name, $targetDir);
+  logUpload($response);
+}
 
-// LOG
-$data = json_decode($response, true);
-$date = date('[H:i:s] l, M jS Y');
-$name = $_POST['name'] ?? 'Anonym';
-$filepath = $data['filepath'];
-$filename = $data['filename'];
-$status = $data['status'];
-$message = $data['message'];
-$str = "
+function logUpload($response)
+{
+  // LOG
+  $data = json_decode($response, true);
+  $date = date('[H:i:s] l, M jS Y');
+  $name = $_POST['name'] ?? 'Anonym';
+  $filepath = $data['filepath'];
+  $filename = $data['filename'];
+  $status = $data['status'];
+  $message = $data['message'];
+  $str = "
 $date
 name    : $name
 file    : $filepath
 status  : $status
 message : $message
 ===============================";
-file_put_contents('upload/logs.txt', $str, FILE_APPEND);
+  file_put_contents('uploads/logs.txt', $str, FILE_APPEND);
+}
 
 
 // cetak string json sebagai response
