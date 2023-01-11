@@ -57,7 +57,7 @@ for ($i = 0; $i < count($_FILES['sertifikat']['name']); $i++) {
   logUpload($response, $fileNames);
 }
 
-function logUpload($response, $fileNames)
+function logUpload($response, &$fileNames)
 {
   // LOG
   $data = json_decode($response, true);
@@ -76,7 +76,7 @@ message : $message
   file_put_contents('uploads/logs.txt', $str, FILE_APPEND);
 
   $filename = $data['filename'];
-  $fileNames[] = $filename;
+  $fileNames[] = "https://siapka.labinformatikaung.id/uploads/$filename";
 }
 
 
@@ -85,5 +85,5 @@ message : $message
 
 // redirect ke minatbakat.php
 session_start();
-$_SESSION['filename'] = implode(', ', $fileNames);
+$_SESSION['filenames'] = $fileNames;
 header('Location: minatbakat.php');

@@ -34,7 +34,7 @@
       <input type="hidden" name="entry.1033499497" id="prestasi_nonakademik" />
       <input type="hidden" name="entry.1391655594" id="uraian_prestasi_nonakademik" />
       <?php session_start() ?>
-      <input type="hidden" name="entry.995987695" id="sertifikat" value="https://siapka.labinformatikaung.id/uploads/<?= $_SESSION['filename'] ?>" />
+      <input type="hidden" name="entry.995987695" id="sertifikat" value="<?= implode(", ", $_SESSION['filenames']) ?>" />
 
       <section class="card">
         <div class="card-header">

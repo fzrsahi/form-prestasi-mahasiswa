@@ -128,33 +128,20 @@ form.addEventListener("submit", (e) => {
   submitBtn.classList.add("d-none");
   loaderBtn.classList.remove("d-none");
 
-  const formData = new FormData();
-  const sertifikatAkademik = getFile(prestasi.akademik.sertifikat);
-  // const sertifikatNonAkademik = getFile(prestasi.nonakademik.sertifikat);
-  formData.append("name", dataDiri.nama);
-  formData.append(`sertifikat`, sertifikatAkademik);
-  // upload file
-  fetch("upload.php", {
-    method: "POST",
-    body: formData,
+  // send data to google
+  console.log("fetching data to: " + url);
+  fetch(url, {
+    mode: "no-cors",
   })
-    .then((response) => response.json())
-    .then((result) => {
-      // send data to google
-      console.log("fetching data to: " + url);
-      fetch(url, {
-        mode: "no-cors",
-      })
-        .then(() => {
-          sessionStorage.setItem("success", "Berhasil menyimpan data");
-          storageDataDiri.empty();
-          storagePrestasi.empty();
-          location.href = "index.html";
-        })
-        .catch(() => {
-          sessionStorage.setItem("error", "Gagal menyimpan data");
-          location.reload(true);
-        });
+    .then(() => {
+      sessionStorage.setItem("success", "Berhasil menyimpan data");
+      storageDataDiri.empty();
+      storagePrestasi.empty();
+      location.href = "index.html";
+    })
+    .catch(() => {
+      sessionStorage.setItem("error", "Gagal menyimpan data");
+      location.reload(true);
     });
 });
 
