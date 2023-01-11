@@ -1,0 +1,5 @@
+# Ignore everything in uploads directory
+uploads/*
+
+# Exept for index.html file
+!uploads/index.html

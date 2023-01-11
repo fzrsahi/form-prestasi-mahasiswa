@@ -128,19 +128,21 @@ form.addEventListener("submit", (e) => {
   loaderBtn.classList.remove("d-none");
 
   console.log("fetching data to: " + url);
-  fetch(url, {
-    mode: "no-cors",
-  })
-    .then(() => {
-      sessionStorage.setItem("success", "Berhasil menyimpan data");
-      storageDataDiri.empty();
-      storagePrestasi.empty();
-      location.href = "index.html";
+  fetch("upload.php", {}).then((response) => {
+    fetch(url, {
+      mode: "no-cors",
     })
-    .catch(() => {
-      sessionStorage.setItem("error", "Gagal menyimpan data");
-      location.reload(true);
-    });
+      .then(() => {
+        sessionStorage.setItem("success", "Berhasil menyimpan data");
+        storageDataDiri.empty();
+        storagePrestasi.empty();
+        location.href = "index.html";
+      })
+      .catch(() => {
+        sessionStorage.setItem("error", "Gagal menyimpan data");
+        location.reload(true);
+      });
+  });
 });
 
 function validateCheckboxes(checkboxes, messageElement) {
