@@ -57,6 +57,7 @@ $data = json_decode($response, true);
 $date = date('[H:i:s] l, M jS Y');
 $name = $_POST['name'] ?? 'Anonym';
 $filepath = $data['filepath'];
+$filename = $data['filename'];
 $status = $data['status'];
 $message = $data['message'];
 $str = "
@@ -70,4 +71,8 @@ file_put_contents('upload/logs.txt', $str, FILE_APPEND);
 
 
 // cetak string json sebagai response
-echo $response;
+// echo $response;
+
+// redirect ke minatbakat.php
+$_SESSION['filename'] = $filename;
+header('Location: minatbakat.php');
