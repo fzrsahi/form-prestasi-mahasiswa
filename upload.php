@@ -74,5 +74,6 @@ file_put_contents('upload/logs.txt', $str, FILE_APPEND);
 // echo $response;
 
 // redirect ke minatbakat.php
+session_start();
 $_SESSION['filename'] = $filename;
 header('Location: minatbakat.php');
