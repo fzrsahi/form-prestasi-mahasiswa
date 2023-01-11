@@ -3,4 +3,3 @@ uploads/*
 
 # Exept for index.html file
 !uploads/index.html
-!uploads/logs.txt
