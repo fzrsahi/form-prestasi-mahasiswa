@@ -255,9 +255,6 @@
           </div>
           <div class="form-group"></div>
           <div class="form-group d-flex gap-1">
-            <button class="bg-secondary" type="button" id="back-btn">
-              Sebelumnya
-            </button>
             <button type="submit" id="submit-btn" disabled>Kirim</button>
             <button id="loader-btn" class="d-flex justify-content-center align-items center d-none" disabled>
               <div class="loader"></div>

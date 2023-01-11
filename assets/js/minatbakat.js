@@ -86,18 +86,18 @@ const dataDiri = storageDataDiri.getFirst();
 const prestasi = storagePrestasi.getFirst();
 fillForm();
 
-const backBtn = document.getElementById("back-btn");
+// const backBtn = document.getElementById("back-btn");
 const submitBtn = document.getElementById("submit-btn");
 const loaderBtn = document.getElementById("loader-btn");
 const form = document.getElementById("form");
 const formAction = form.action;
 
-backBtn.addEventListener("click", (e) => {
-  e.preventDefault();
+// backBtn.addEventListener("click", (e) => {
+//   e.preventDefault();
 
-  // arahkan ke halaman sebelumnya
-  location.href = "prestasi.html";
-});
+//   // arahkan ke halaman sebelumnya
+//   location.href = "prestasi.html";
+// });
 
 // untuk setiap checkbox group
 for (const check of checks) {
