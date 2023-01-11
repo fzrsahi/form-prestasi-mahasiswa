@@ -40,6 +40,7 @@ entry.407005584=Kewirausahaan
 entry.407005584=Keorganisasian
 entry.407005584=Lainnya
 entry.1672378515=URAIANBAKATNONAKADEMIK
+entry.995987695=SERTIFIKAT
 */
 
 const storageDataDiri = new Storage_("data-diri");
