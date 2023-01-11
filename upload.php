@@ -48,32 +48,35 @@ function uploadFile($file_name, $file_tmp_name, $target_dir = 'uploads/')
 
 // upload sertifikat ke $targetDir
 $targetDir = 'uploads/';
+$fileNames = [];
 for ($i = 0; $i < count($_FILES['sertifikat']['name']); $i++) {
   $file_name = $_FILES['sertifikat']['name'][$i];
   $file_tmp_name = $_FILES['sertifikat']['tmp_name'][$i];
   // fungsi ini mengembalikan json
   $response = uploadFile($file_name, $file_tmp_name, $targetDir);
-  logUpload($response);
+  logUpload($response, $fileNames);
 }
 
-function logUpload($response)
+function logUpload($response, $fileNames)
 {
   // LOG
   $data = json_decode($response, true);
   $date = date('[H:i:s] l, M jS Y');
   $name = $_POST['name'] ?? 'Anonym';
   $filepath = $data['filepath'];
-  $filename = $data['filename'];
   $status = $data['status'];
   $message = $data['message'];
   $str = "
-$date
+  $date
 name    : $name
 file    : $filepath
 status  : $status
 message : $message
 ===============================";
   file_put_contents('uploads/logs.txt', $str, FILE_APPEND);
+
+  $filename = $data['filename'];
+  $fileNames[] = $filename;
 }
 
 
@@ -82,5 +85,5 @@ message : $message
 
 // redirect ke minatbakat.php
 session_start();
-$_SESSION['filename'] = $filename;
+$_SESSION['filename'] = implode(', ', $fileNames);
 header('Location: minatbakat.php');
